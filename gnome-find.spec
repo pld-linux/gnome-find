@@ -5,12 +5,15 @@ Name:		gnome-find
 Version:	0.3
 Release:	1
 License:	GPL
-Url:		http://gnome-find.sourceforge.net
 Group:		Applications/System
 Group(de):	Applikationen/System
 Group(pl):	Aplikacje/System
-Source0:	%{name}-%{version}.tar.gz
-Requires:	gnome-libs >= 1.0.53 libglade >= 0.11 gtk+ >= 1.2.0 glib >= 1.2.0
+Source0:	http://download.sourceforge.net/gnome-find/%{name}-%{version}.tar.gz
+URL:		http://gnome-find.sourceforge.net/
+BuildRequires:	gnome-libs-devel >= 1.0.53
+BuildRequires:	libglade-devel >= 0.11
+BuildRequires:	gtk+-devel >= 1.2.0
+BuildRequires:	glib-devel >= 1.2.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -21,7 +24,7 @@ gnome-find es una versión gráfica para GNOME de la utilidad GNU
 "find".
 
 %description -l pl
-gnome-find to graficzna wersja wersja programu "find przeznaczona dla
+gnome-find to graficzna wersja wersja programu "find" przeznaczona dla
 ¶rodowiska GNOME.
 
 %prep
