@@ -9,12 +9,11 @@ Group:		Applications/System
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	cdfe78acd65bd42a85e8594853098e5e
 URL:		http://gnome-find.sourceforge.net/
-BuildRequires:	gnome-libs-devel >= 1.0.53
-BuildRequires:	libglade-devel >= 0.11
-BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	glib-devel >= 1.2.0
+BuildRequires:	gnome-libs-devel >= 1.0.53
+BuildRequires:	gtk+-devel >= 1.2.0
+BuildRequires:	libglade-devel >= 0.11
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 gnome-find is a graphical, GNOME version of the GNU "find" utility.
@@ -36,10 +35,12 @@ gnome-find to graficzna wersja wersja programu "find" przeznaczona dla
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} DESTDIR=$RPM_BUILD_ROOT install
 
-install -d $RPM_BUILD_ROOT/%{_applnkdir}/Utilities
-install gnome-find.desktop $RPM_BUILD_ROOT/%{_applnkdir}/Utilities/
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+
+install -d $RPM_BUILD_ROOT%{_applnkdir}/Utilities
+install gnome-find.desktop $RPM_BUILD_ROOT%{_applnkdir}/Utilities
 
 %clean
 rm -rf $RPM_BUILD_ROOT
