@@ -28,7 +28,7 @@ CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=%{prefix}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
 strip $RPM_BUILD_ROOT%{prefix}/bin/*
 
 %clean
