@@ -6,7 +6,7 @@ Version:	0.3
 Release:	2
 License:	GPL
 Group:		Applications/System
-Source0:	http://download.sourceforge.net/gnome-find/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	cdfe78acd65bd42a85e8594853098e5e
 URL:		http://gnome-find.sourceforge.net/
 BuildRequires:	gnome-libs-devel >= 1.0.53
