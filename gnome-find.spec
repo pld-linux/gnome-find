@@ -3,7 +3,7 @@ Summary(es):	Una versión gráfica para GNOME de la utilidad GNU "find"
 Summary(pl):	Graficzna wersja "find" dla ¶rodowiska GNOME
 Name:		gnome-find
 Version:	0.3
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/System
 Group(de):	Applikationen/System
@@ -15,6 +15,9 @@ BuildRequires:	libglade-devel >= 0.11
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	glib-devel >= 1.2.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_prefix		/usr/X11R6
+%define		_mandir		%{_prefix}/man
 
 %description
 gnome-find is a graphical, GNOME version of the GNU "find" utility.
@@ -31,11 +34,15 @@ gnome-find to graficzna wersja wersja programu "find" przeznaczona dla
 %setup -q
 
 %build
-CFLAGS="%{rpmcflags}" ./configure --prefix=%{_prefix}
+%configure2_13
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} DESTDIR=$RPM_BUILD_ROOT install
+
+install -d $RPM_BUILD_ROOT/%{_applnkdir}/Utilities
+install gnome-find.desktop $RPM_BUILD_ROOT/%{_applnkdir}/Utilities/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -45,6 +52,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS HACKING NEWS README TODO ChangeLog
 %attr(755,root,root)
 %attr(755,root,root) %{_bindir}/%{name}
-%{_mandir}/man1/%{name}.1
+%{_mandir}/man1/*
 %{_applnkdir}/Utilities/%{name}.desktop
 %{_datadir}/%{name}
