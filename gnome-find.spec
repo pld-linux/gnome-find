@@ -33,7 +33,6 @@ CFLAGS="%{rpmcflags}" ./configure --prefix=%{_prefix}
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
-strip $RPM_BUILD_ROOT%{_bindir}/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
