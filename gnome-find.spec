@@ -1,12 +1,9 @@
-%define    ver     0.3
-%define    rel     1
-%define    prefix  /usr
-
-Summary:	A GNOME version of the GNU "find" utility.
-Summary(es):	Una versión gráfica para GNOME de la utilidad GNU "find".
+Summary:	A GNOME version of the GNU "find" utility
+Summary(es):	Una versión gráfica para GNOME de la utilidad GNU "find"
+Summary(pl):	Wersja GNOME narzêdzia "find"
 Name:		gnome-find
-Version:	%{ver}
-Release:	%{rel}
+Version:	0.3
+Release:	1
 License:	GPL
 Url:		http://gnome-find.sourceforge.net
 Group:		Applications/System
@@ -27,7 +24,7 @@ gnome-find es una versión gráfica para GNOME de la utilidad GNU
 %setup -q
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=%{_prefix}
+CFLAGS="%{rpmcflags}" ./configure --prefix=%{_prefix}
 
 %install
 rm -rf $RPM_BUILD_ROOT
