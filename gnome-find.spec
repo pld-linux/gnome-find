@@ -1,6 +1,6 @@
 Summary:	A GNOME version of the GNU "find" utility
-Summary(es):	Una versión gráfica para GNOME de la utilidad GNU "find"
-Summary(pl):	Graficzna wersja "find" dla ¶rodowiska GNOME
+Summary(es.UTF-8):   Una versiÃ³n grÃ¡fica para GNOME de la utilidad GNU "find"
+Summary(pl.UTF-8):   Graficzna wersja "find" dla Å›rodowiska GNOME
 Name:		gnome-find
 Version:	0.3
 Release:	2
@@ -18,13 +18,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 gnome-find is a graphical, GNOME version of the GNU "find" utility.
 
-%description -l es
-gnome-find es una versión gráfica para GNOME de la utilidad GNU
+%description -l es.UTF-8
+gnome-find es una versiÃ³n grÃ¡fica para GNOME de la utilidad GNU
 "find".
 
-%description -l pl
+%description -l pl.UTF-8
 gnome-find to graficzna wersja wersja programu "find" przeznaczona dla
-¶rodowiska GNOME.
+Å›rodowiska GNOME.
 
 %prep
 %setup -q
