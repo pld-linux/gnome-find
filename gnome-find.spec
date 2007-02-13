@@ -1,6 +1,6 @@
 Summary:	A GNOME version of the GNU "find" utility
-Summary(es.UTF-8):   Una versión gráfica para GNOME de la utilidad GNU "find"
-Summary(pl.UTF-8):   Graficzna wersja "find" dla środowiska GNOME
+Summary(es.UTF-8):	Una versión gráfica para GNOME de la utilidad GNU "find"
+Summary(pl.UTF-8):	Graficzna wersja "find" dla środowiska GNOME
 Name:		gnome-find
 Version:	0.3
 Release:	2
